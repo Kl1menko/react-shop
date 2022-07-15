@@ -1,6 +1,51 @@
 function App() {
   return (
     <div className="wrapper clear">
+
+        <div className="overlay">
+          <div className="drawer">
+            <h2 className="mb-30 d-flex justify-between">Корзина <img className="removeBtn" src="/img/btn-close.svg" alt="btnRemove" /></h2>
+
+              <div className="items">
+                  <div className="cartItem d-flex align-center mb-20">
+                  <div style={{ backgroundImage: 'url(/img/sneakers/1.jpg)' }} className="cartItemImg"></div>
+                    <div className="mr-20 flex">
+                      <p className="mb-5">Мужские Кроссовки Nike Blazer Mid Suede</p>
+                      <b>3122 грн.</b>
+                    </div>
+                    <img className="removeBtn" src="/img/btn-close.svg" alt="btnRemove" />
+                </div>
+
+                <div className="cartItem d-flex align-center mb-20">
+                  <div style={{ backgroundImage: 'url(/img/sneakers/2.jpg)' }} className="cartItemImg"></div>
+                    <div className="mr-20 flex">
+                      <p className="mb-5">Мужские Кроссовки Nike Blazer Mid Suede</p>
+                      <b>3122 грн.</b>
+                    </div>
+                    <img className="removeBtn" src="/img/btn-close.svg" alt="btnRemove" />
+                </div>
+              </div>
+
+              <div className="cartTotalBlock">
+                <ul>
+                  <li>
+                    <span>Итого:</span>
+                    <div></div>
+                    <b>13 321 грн.</b>
+                  </li>
+                  <li>
+                    <span>Налог 5%:</span>
+                    <div></div>
+                    <b>321 грн.</b>
+                  </li>
+                </ul>
+
+                <button className="greenButton">Оформить заказ <img src="/img/arrow.svg" alt="arrow" /></button>
+              </div>
+
+          </div>
+        </div>
+
         <header className="d-flex justify-between align-center p-40">
            <div className="d-flex align-center">
            <img width={40} height={40} src="/img/logo.png" />
@@ -15,10 +60,17 @@ function App() {
               </ul>
         </header>
         <div className="content p-40">
-          <h1 className="mb-40">Все кроссовки</h1>
+          <div className="d-flex align-center justify-between mb-40">
+            <h1>Все кроссовки</h1>
+              <div className="search-block d-flex">
+                <img src="/img/search.svg" alt="search" />
+                <input type="text" placeholder="Поиск..." />
+              </div>
+          </div>
 
             <div className="d-flex">
             <div className="card">
+              <div className="favorite"><img src="/img/heart-unlike.svg" alt="heartUn" /></div>
               <img width={133} height={112} src="/img/sneakers/1.jpg" alt="1"/>
               <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
                 <div className="d-flex justify-between align-center">
@@ -75,10 +127,9 @@ function App() {
             </div>
             </div>
 
-
     </div>
     </div>
   );
 }
 
-export default App; //говорим, что вот этот весь код должен быть доступен для всех файлов
+export default App;
